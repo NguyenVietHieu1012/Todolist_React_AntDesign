@@ -1,5 +1,5 @@
-import TaskDetail from './components/TaskDetail';
-import TaskManager from './components/TaskManager';
+import TaskDetail from './pages/TaskDetail';
+import TaskManager from './pages/TaskManager';
 import MainLayout from './layouts/MainLayout';
 import {Routes, Route} from 'react-router-dom';
 

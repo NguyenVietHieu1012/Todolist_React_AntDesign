@@ -3,7 +3,7 @@ import { Card, Tag, Button, Row, Col} from 'antd';
 import dayjs from 'dayjs';
 
 const TaskDetail = () => {
-  const location = useLocation(); // chỉ đưa toàn bộ thông tin của route hiện tại
+  const location = useLocation(); // chỉ ra toàn bộ thông tin của route hiện tại
 
   console.log({location}); 
 

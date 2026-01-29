@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
+import { useState, useEffect } from "react";
+import TaskForm from "../components/TaskForm";
+import TaskList from "../components/TaskList";
 
 const TaskManager = () => {
     const [name, setName] = useState("");

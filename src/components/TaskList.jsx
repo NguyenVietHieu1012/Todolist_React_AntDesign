@@ -43,19 +43,16 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
         key: 'action',
         render: (_, record) => (
         <Space>
-            <Button
-            type="primary"
-            onClick={() => {
-                startEdit(record);
-                setShowForm(true);
-            }}
+            <Button type="primary"
+                onClick={() => {
+                    startEdit(record);
+                    setShowForm(true);
+                }}
             >
             Edit
             </Button>
-            <Button
-            danger
-            type='primary'
-            onClick={() => deleteTask(record.id)}
+            <Button danger type='primary'
+                onClick={() => deleteTask(record.id)}
             >
             Remove
             </Button>
@@ -83,12 +80,10 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
                 + Add Task
                 </Button>
 
-                <Button
-                type="primary"
-                danger
-                style={{ marginLeft: '20px' }}
-                onClick={() => {
-                    if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) setTaskList([]);}}
+                <Button type="primary" danger
+                    style={{ marginLeft: '20px' }}
+                    onClick={() => {
+                        if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) setTaskList([]);}}
                 >
                 Remove all items in task list
                 </Button>
