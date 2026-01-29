@@ -9,7 +9,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<TaskManager/>}></Route>
-          <Route path="/detail/:id" element={<TaskDetail/>}></Route>
+          <Route path="/detail/:id" element={<TaskDetail/>}></Route> {/* :id để hiển thị id task trên thanh url */}
         </Routes>
       </MainLayout>
     </>

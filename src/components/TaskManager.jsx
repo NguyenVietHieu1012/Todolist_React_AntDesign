@@ -3,32 +3,33 @@ import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 const TaskManager = () => {
-    // 1. Quản lý State chung
     const [name, setName] = useState("");
     const [des, setDes] = useState("");
     const [status, setStatus] = useState("");
     const [editingFlag, setEditingFlag] = useState(null);
     const [taskList, setTaskList] = useState(
         () => {
-            const savedTasks = localStorage.getItem("myTasks");
-            return savedTasks ? JSON.parse(savedTasks) : [];
-        }
+            const savedTasks = localStorage.getItem("myTasks"); // Lấy dữ liệu đã lưu trước đó
+            return savedTasks ? JSON.parse(savedTasks) : []; // Nếu có dữ liệu → parse JSON → dùng làm state ban đầu. Nếu ko -> mảng rỗng
+        } // truyền function vào useState để function chỉ cần gọi duy nhất 1 lần khi component mount lần đầu 
     );
     const [showForm, setShowForm] = useState(false);
 
-    // 2. LocalStorage
+    // LocalStorage
     useEffect(
         () => {
             localStorage.setItem("myTasks", JSON.stringify(taskList));
-        }, [taskList]
+        }, [taskList] // Nếu [taskList] thay đổi thì chạy đoạn code trong useEffect
     );
 
-    // 3. Hàm xử lý logic
+    // Hàm xử lý logic khi bấm nút 
     const handleSubmit = () => {
+        // Edit Task
         if (editingFlag !== null) {
             setTaskList(taskList.map(t => t.id === editingFlag ? { ...t, name, des, status } : t));
             setEditingFlag(null);
         } 
+        // Add Task
         else {
             const newId = taskList.length > 0 ? Math.max(...taskList.map(t => t.id)) + 1 : 1;
             const createdAt = new Date().toISOString(); // lưu thời gian tạo

@@ -13,8 +13,8 @@ const TaskForm = ({
   setEditingFlag,
   handleSubmit,
 }) => {
-  if (!showForm) return null;
-
+  if (!showForm) return null;  // -> công tắc ẩn hiện TaskForm 
+  // return null = Không render JSX nào cả
   return (
     <div style={{ marginLeft: '30px' }}>
       <Card
@@ -60,6 +60,7 @@ const TaskForm = ({
 
               <Button
                 danger
+                type='primary'
                 onClick={() => {
                   setEditingFlag(null);
                   setName('');

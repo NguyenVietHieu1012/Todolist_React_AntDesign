@@ -1,31 +1,34 @@
-import { useLocation, useParams, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Card, Tag, Button, Row, Col} from 'antd';
 import dayjs from 'dayjs';
 
 const TaskDetail = () => {
-  const { id } = useParams();
-  const location = useLocation();
+  const location = useLocation(); // chỉ đưa toàn bộ thông tin của route hiện tại
 
-  const taskFromState = location.state?.task;
+  console.log({location}); 
+
+  /* 
+    {
+      "location": {
+        "hash": "",
+        "key": "dyrz4rsm",
+        "pathname": "/detail/1",
+        "search": "",
+        "state": {
+          "task": {
+            "id": 1,
+            "name": "Thu thập yêu cầu",
+            "des": "Làm việc với các bên liên quan để xác định mục tiêu, phạm vi và yêu cầu chi tiết của dự án.",
+            "status": "Done",
+            "createdAt": "2026-01-28T08:45:12.745Z"
+          }
+        }
+      }
+    }
+  */
+
+  const taskFromState = location.state?.task; // lấy task từ trong state, nếu ko có thì trả về undefined
   let task = taskFromState;
-
-  if (!task) {
-    const saved = localStorage.getItem('myTasks');
-    const savedTasks = saved ? JSON.parse(saved) : [];
-    task = savedTasks.find(t => Number(t.id) === Number(id));
-  }
-
-  if (!task) {
-    return (
-      <Row justify="center" style={{ marginTop: 40 }}>
-        <Col span={12}>
-            <Link to="/">
-                <Button>Quay lại</Button>
-            </Link>
-        </Col>
-      </Row>
-    );
-  }
 
   const STATUS_COLOR = {
     Pending: 'red',
@@ -50,7 +53,7 @@ const TaskDetail = () => {
             <strong>Thời gian tạo:</strong>{' '}
             {task.createdAt
               ? dayjs(task.createdAt).format('DD/MM/YYYY HH:mm:ss')
-              : 'Không có'}
+              : 'Không tìm thấy ngày giờ'}
           </p>
 
           <hr />

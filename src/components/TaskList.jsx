@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import { Table, Button, Tag, Space } from 'antd';
 
-const TaskList = ({ setShowForm,taskList, startEdit, deleteTask, setTaskList }) => {
+const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList }) => {
     const STATUS_MAP = {
         Pending: { color: "red" },
         Ongoing: { color: "orange" },
@@ -20,8 +20,8 @@ const TaskList = ({ setShowForm,taskList, startEdit, deleteTask, setTaskList }) 
         key: 'name',
         render: (text, record) => (
         <Link
-            to={`/detail/${record.id}`}
-            state={{ task: record }}
+            to={`/detail/${record.id}`} //${record.id} là dynamic route parameter
+            state={{ task: record }} // Truyền dữ liệu trực tiếp sang page tiếp theo
             style={{ textDecoration: 'none', color: 'black' }}
         >
             {text}
@@ -75,21 +75,22 @@ const TaskList = ({ setShowForm,taskList, startEdit, deleteTask, setTaskList }) 
 
             <div style={{ marginTop: '16px' }}>
                 <Button
-                type="primary"
-                danger
-                onClick={() => setTaskList([])}
-                >
-                Remove all items in task list
-                </Button>
-
-                <Button
                 // type="primary"
                 color='cyan'
                 variant='solid'
-                style={{ marginLeft: '20px' }}
                 onClick={() => setShowForm(true)}
                 >
                 + Add Task
+                </Button>
+
+                <Button
+                type="primary"
+                danger
+                style={{ marginLeft: '20px' }}
+                onClick={() => {
+                    if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) setTaskList([]);}}
+                >
+                Remove all items in task list
                 </Button>
             </div>
         </div>
