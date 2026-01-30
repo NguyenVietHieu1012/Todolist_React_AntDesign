@@ -57,16 +57,20 @@ const TaskManager = () => {
         <div className="table-component" style={{display: "flex", height: "auto"}}>
             {/* Truyền dữ liệu qua props */}
             <TaskForm 
+                //
                 showForm={showForm}
                 setShowForm={setShowForm}
+                //
                 name={name} 
                 setName={setName} 
                 des={des} 
                 setDes={setDes} 
                 status={status} 
                 setStatus={setStatus} 
+                //
                 editingFlag={editingFlag} 
                 setEditingFlag={setEditingFlag}
+                //
                 handleSubmit={handleSubmit}
             />
             

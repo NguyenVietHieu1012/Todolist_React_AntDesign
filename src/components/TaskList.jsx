@@ -75,13 +75,14 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
                 // type="primary"
                 color='cyan'
                 variant='solid'
+                style={{ marginRight: '20px' , marginBottom: "15px"}}
                 onClick={() => setShowForm(true)}
                 >
                 + Add Task
                 </Button>
 
                 <Button type="primary" danger
-                    style={{ marginLeft: '20px' }}
+                    // style={{ marginLeft: '20px' }}
                     onClick={() => {
                         if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) setTaskList([]);}}
                 >

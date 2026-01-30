@@ -1,16 +1,23 @@
 import { Form, Input, Select, Button, Card, Space } from 'antd';
 
 const TaskForm = ({
+  // ẩn hiện form
   showForm,
   setShowForm,
+
+  // các trường thông tin
   name,
   setName,
   des,
   setDes,
   status,
   setStatus,
+
+  // Flag edit 
   editingFlag,
   setEditingFlag,
+
+  // logic nút bấm 
   handleSubmit,
 }) => {
   if (!showForm) return null;  // -> công tắc ẩn hiện TaskForm 
