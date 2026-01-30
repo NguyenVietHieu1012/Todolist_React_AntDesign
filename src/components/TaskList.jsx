@@ -22,7 +22,7 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
         <Link
             to={`/detail/${record.id}`} //${record.id} là dynamic route parameter
             state={{ task: record }} // Truyền dữ liệu trực tiếp sang page tiếp theo
-            style={{ textDecoration: 'none', color: 'black' }}
+            style={{color: 'black' }}
         >
             {text}
         </Link>
@@ -43,7 +43,7 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
         key: 'action',
         render: (_, record) => (
         <Space>
-            <Button type="primary"
+            <Button type="primary" style={{}}
                 onClick={() => {
                     startEdit(record);
                     // setShowForm(true);

@@ -50,7 +50,21 @@ const TaskManager = () => {
     };
 
     const deleteTask = (id) => {
-        if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) setTaskList(taskList.filter(t => t.id !== id));
+        if (window.confirm("Bạn có chắc chắn muốn xóa ko?")) {
+            setTaskList(
+                prevList => {
+                    // Lọc bỏ task có id trùng khớp
+                    const filteredList = prevList.filter(t => t.id != id);
+                    // Cập nhật lại ID cho các task còn lại theo thứ tự 1, 2, 3...
+                    return filteredList.map(
+                        (task, index) => ({
+                            ...task,
+                            id: index + 1
+                        })
+                    );
+                }
+            );
+        };
     };
 
     return (
