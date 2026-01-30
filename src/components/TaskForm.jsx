@@ -18,7 +18,7 @@ const TaskForm = ({
   return (
     <div style={{ marginLeft: '30px' }}>
       <Card
-        title={editingFlag ? `Đang sửa Task số ${editingFlag}` : 'Thêm Task Mới'}
+        // title={editingFlag ? `Đang sửa Task số ${editingFlag}` : 'Thêm Task Mới'}
         style={{ width: 325 }}
       >
         <Form layout="vertical">
@@ -41,7 +41,7 @@ const TaskForm = ({
 
           <Form.Item label="Status">
             <Select
-              placeholder="Select task status"
+              placeholder="Trạng thái công việc"
               value={status}
               onChange={(value) => setStatus(value)}
               allowClear

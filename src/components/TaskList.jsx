@@ -46,7 +46,7 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
             <Button type="primary"
                 onClick={() => {
                     startEdit(record);
-                    setShowForm(true);
+                    // setShowForm(true);
                 }}
             >
             Edit

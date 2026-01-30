@@ -40,7 +40,7 @@ const TaskDetail = () => {
     <Row justify="center" style={{ marginTop: 40 }}>
       <Col span={12}>
         <Card
-          title="Chi tiết Task"
+          title="Task Detail"
           extra={
             <Tag color={STATUS_COLOR[task.status] || 'default'}>
               {task.status || 'Unknown'}
@@ -50,7 +50,7 @@ const TaskDetail = () => {
           <h3>{task.name}</h3>
 
           <p style={{ color: '#888' }}>
-            <strong>Thời gian tạo:</strong>{' '}
+            <strong>Date Created:</strong>{' '}
             {task.createdAt
               ? dayjs(task.createdAt).format('DD/MM/YYYY HH:mm:ss')
               : 'Không tìm thấy ngày giờ'}
@@ -59,14 +59,14 @@ const TaskDetail = () => {
           <hr />
 
           <p>
-            <strong>Mô tả:</strong><br />
+            <strong>Description:</strong><br />
             {task.des || 'Không có mô tả'}
           </p>
 
           <div style={{ textAlign: 'right', marginTop: 16 }}>
             <Link to="/">
               <Button type="primary">
-                ← Quay lại danh sách
+                ← Back to the task list
               </Button>
             </Link>
           </div>

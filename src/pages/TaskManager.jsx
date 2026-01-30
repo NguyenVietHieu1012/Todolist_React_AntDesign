@@ -55,7 +55,7 @@ const TaskManager = () => {
 
     return (
         <div className="table-component" style={{display: "flex", height: "auto"}}>
-            {/* Truyền dữ liệu qua PROPS */}
+            {/* Truyền dữ liệu qua props */}
             <TaskForm 
                 showForm={showForm}
                 setShowForm={setShowForm}
