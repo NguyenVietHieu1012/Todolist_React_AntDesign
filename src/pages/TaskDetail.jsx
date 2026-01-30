@@ -38,7 +38,7 @@ const TaskDetail = () => {
 
   return (
     <Row justify="center" style={{ marginTop: 40 }}>
-      <Col span={12}>
+      <Col span={6}>
         <Card
           title="Task Detail"
           extra={
@@ -49,7 +49,11 @@ const TaskDetail = () => {
         >
           <h3>{task.name}</h3>
 
-          <p style={{ color: '#888' }}>
+          <p style={{ 
+              // color: '#888' 
+              color: '#CC99FF'
+            }}
+          >
             <strong>Date Created:</strong>{' '}
             {task.createdAt
               ? dayjs(task.createdAt).format('DD/MM/YYYY HH:mm:ss')

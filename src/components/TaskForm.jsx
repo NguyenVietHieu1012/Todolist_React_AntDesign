@@ -61,8 +61,12 @@ const TaskForm = ({
 
           <Form.Item>
             <Space>
-              <Button color='cyan' variant='solid' onClick={handleSubmit}>
-                {editingFlag ? 'Save changes' : 'Add to table'}
+              <Button 
+                color='green' variant='solid' 
+                onClick={handleSubmit} 
+                style={{background: ""}}
+              >
+                {editingFlag ? 'Save changes' : '+ Add to table'}
               </Button>
 
               <Button

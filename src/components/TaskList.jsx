@@ -73,8 +73,7 @@ const TaskList = ({ setShowForm, taskList, startEdit, deleteTask, setTaskList })
             <div style={{ marginTop: '16px' }}>
                 <Button
                 // type="primary"
-                color='cyan'
-                variant='solid'
+                color='green' variant='solid'
                 style={{ marginRight: '20px' , marginBottom: "15px"}}
                 onClick={() => setShowForm(true)}
                 >
